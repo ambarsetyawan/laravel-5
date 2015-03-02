@@ -1,0 +1,33 @@
+<?php
+namespace App\Http\Controllers;
+use App\Songs;
+
+class SongsController extends Controller{
+public function index(){
+	$singer=Songs::get();
+	//dd($songs);
+	return View('show.songs',compact('singer'));
+
+   }
+ public function details_info($id){
+  $songs_display_details=Songs::find($id);
+   return view('show.details',compact('songs_display_details'));
+   }  
+
+   public function delete($id)
+   {
+   	$songs=Songs::find($id);
+   	$songs->delete();
+   	return View('show.delete');
+   }
+   public function getadd(){
+   	return View('show.add');
+   }
+   public function add(){
+   $so=new Songs;
+   $so->title=Input::get('title');
+   $so->lyrics=Input::get('lyrics');
+   $so->save();
+
+   }
+}

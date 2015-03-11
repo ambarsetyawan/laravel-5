@@ -34,7 +34,7 @@
  
 <div class="form-group">
  <div class="col-lg-10 col-lg-offset-2"> 
-     <input name="_token" type="hidden" value="y2ovMLjq9npraeSb6ly0ISOziZbIDezPH9HCLskG">
+     <input name="_token" type="hidden" value="{{csrf_token}}">
 <input type="submit"class="btn btn-primary" value="Submit">
 <a href="{{URL::route('index-page')}}"><button class="btn btn-warning back2"  type="button"><span class="glyphicon glyphicon-hand-left"></span> Back</button></a>
 
